@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_graph"
+    app:startDestination="@id/home_fragment">
+
+    <include app:graph="@navigation/nav_score_graph"/>
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.example.myapplication.view.MainFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_main"/>
+
+    <action
+        android:id="@+id/action_to_score_fragment"
+        app:destination="@id/nav_score_graph"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim">
+        <argument
+            android:name="schoolKey"
+            app:argType="com.example.myapplication.viewmodel.SatData"/>
+    </action>
+
+</navigation>
